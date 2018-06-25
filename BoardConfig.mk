@@ -127,6 +127,9 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/qcom/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/qcom/sepolicy/public
 
+# System-as-root
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+
 # Treble
 BOARD_VNDK_RUNTIME_DISABLE := true
 BOARD_VNDK_VERSION := current
