@@ -26,6 +26,7 @@ VNDK_SP_LIBRARIES := \
     libion \
     liblzma \
     libpng \
+    libqti_vndfwk_detect \
     libunwind \
     libunwindstack \
     libutils \

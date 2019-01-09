@@ -28,6 +28,10 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
