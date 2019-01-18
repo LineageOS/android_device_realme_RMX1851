@@ -74,10 +74,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
 
-# Display density
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=480
-
 # Display post-processing
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.ad=1 \
