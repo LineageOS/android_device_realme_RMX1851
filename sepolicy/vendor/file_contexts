@@ -37,3 +37,6 @@
 
 # Sensors
 /vendor/bin/hw/android\.hardware\.sensors@1\.0-service\.RMX1851                                         u:object_r:hal_sensors_default_exec:s0
+
+# Touch HAL
+/vendor/bin/hw/vendor\.lineage\.touch@1\.0-service\.RMX1851                                             u:object_r:hal_lineage_touch_default_exec:s0
