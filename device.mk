@@ -181,7 +181,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
     android.hardware.power@1.0-service \
-    power.qcom:64
+    power.sdm710
 
 # QTI
 PRODUCT_COPY_FILES += \
@@ -236,7 +236,7 @@ PRODUCT_PACKAGES += \
 
 # Trust HAL
 PRODUCT_PACKAGES += \
-    lineage.trust@1.0-service
+    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
