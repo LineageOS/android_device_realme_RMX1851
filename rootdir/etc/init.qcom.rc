@@ -1504,6 +1504,14 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     interface android.hardware.audio@4.0::IDevicesFactory default
     interface android.hardware.audio@2.0::IDevicesFactory default
 
+service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0-service
+    override
+    class hal
+    interface android.hardware.contexthub@1.0::IContexthub default
+    user system
+    group system
+    disabled
+
 #ifdef VENDOR_EDIT
 #Qiang.shao@PSW.AD.OppoFeature.CommonSoft.1181235, 2016/07/30, Add for self_init domain to access block_device for init prop
 service prop-adap-core /vendor/bin/self-init core
@@ -1553,4 +1561,3 @@ on property:ro.vendor.oppo.product.name=*
 on property:ro.vendor.oppo.product.device=*
     setprop ro.product.vendor.device ${ro.vendor.oppo.product.device}
 #endif
-
