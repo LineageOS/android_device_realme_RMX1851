@@ -1,7 +1,3 @@
-# Audio
-vendor/lib64/soundfx/libvolumelistener.so:lib64/soundfx/libvolumelistener.so
-vendor/lib/soundfx/libvolumelistener.so:lib/soundfx/libvolumelistener.so
-
 # Audio KTV
 lib64/vendor.oppo.hardware.ktv@1.0.so
 lib/vendor.oppo.hardware.ktv@1.0.so
