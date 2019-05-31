@@ -463,6 +463,7 @@ on property:persist.debug.trace=1
 
 on property:vold.decrypt=trigger_restart_framework
     start wcnss-service
+    start vendor-sensor-sh
 
 service vendor.cnd /system/vendor/bin/cnd
     class main
@@ -616,6 +617,7 @@ service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
     class core
     user root
     oneshot
+    disabled
 
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
