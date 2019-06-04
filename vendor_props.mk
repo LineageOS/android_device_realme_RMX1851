@@ -50,6 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.service.bdroid.soc.alwayson=true \
     persist.vendor.service.bt.iot.enablelogging=true \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    vendor.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
