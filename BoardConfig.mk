@@ -7,6 +7,7 @@
 BOARD_VENDOR := realme
 
 DEVICE_PATH := device/realme/RMX1851
+PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # Architecture
 TARGET_ARCH := arm64
