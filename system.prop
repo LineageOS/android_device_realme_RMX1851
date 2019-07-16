@@ -49,6 +49,8 @@ ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 sdm.drop_skewed_vsync=1
 
 # Media
+debug.stagefright.omx_default_rank.sw-audio=1
+debug.stagefright.omx_default_rank=0
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Memory optimizations
