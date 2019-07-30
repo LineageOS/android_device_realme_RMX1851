@@ -1356,10 +1356,6 @@ vendor/lib/libscvePanorama_lite.so
 vendor/bin/ssr_setup
 vendor/bin/subsystem_ramdump
 
-# Thermal
-vendor/lib64/hw/thermal.sdm710.so
-vendor/lib/hw/thermal.sdm710.so
-
 # Thermal engine
 vendor/bin/thermal-engine
 vendor/lib64/libthermalclient.so
