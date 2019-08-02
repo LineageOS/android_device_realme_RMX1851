@@ -155,7 +155,8 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     libtinyxml \
     libvulkan \
-    vendor.display.config@1.7
+    vendor.display.config@1.7 \
+    vendor.display.config@1.7.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
