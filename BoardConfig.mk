@@ -155,5 +155,8 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
+# WiFi
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
 # Inherit from the proprietary version
 -include vendor/realme/RMX1851/BoardConfigVendor.mk
