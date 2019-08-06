@@ -131,7 +131,6 @@ PRODUCT_PACKAGES += \
 # Init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.class_main.sh \
     init.msm.usb.configfs.rc \
     init.oppo.fingerprints.rc \
     init.oppo.rc \
