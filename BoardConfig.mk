@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-BOARD_VENDOR := xiaomi
+BOARD_VENDOR := realme
 
-COMMON_PATH := device/xiaomi/sdm845-common
+DEVICE_PATH := device/realme/RMX1851
 
 # Architecture
 TARGET_ARCH := arm64
@@ -24,7 +24,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a75
 TARGET_USES_64_BIT_BINDER := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sdm845
+TARGET_BOOTLOADER_BOARD_NAME := sdm710
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
@@ -38,12 +38,12 @@ TARGET_KERNEL_ARCH := arm64
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_CLANG_COMPILE := true
   TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-  TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm845
+  TARGET_KERNEL_SOURCE := kernel/realme/sdm710
 endif
 
 # Platform
-#TARGET_BOARD_PLATFORM := sdm845
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
+#TARGET_BOARD_PLATFORM := sdm710
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno616
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -54,7 +54,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
@@ -74,7 +74,7 @@ WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 2
@@ -82,9 +82,9 @@ TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := (1 << 21) | (1 << 27)
 TARGET_USES_HWC2 := true
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(COMMON_PATH)/framework_compatibility_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -115,7 +115,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_xiaomi
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -125,7 +125,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_RIL_VARIANT := caf
 
 # Sepolicy
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/qcom/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/qcom/sepolicy/public
@@ -136,4 +136,4 @@ BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Inherit from the proprietary version
--include vendor/xiaomi/sdm845-common/BoardConfigVendor.mk
+-include vendor/realme/RMX1851/BoardConfigVendor.mk
