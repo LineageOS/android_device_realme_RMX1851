@@ -48,6 +48,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qcom.rc
 
+PRODUCT_PACKAGES += \
+    fstab.qcom
+
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
