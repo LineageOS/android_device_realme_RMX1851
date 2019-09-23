@@ -59,55 +59,55 @@ lib/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
 lib/vendor.qti.hardware.biometrics.face@1.0.so
 lib/vendor.qti.hardware.biometrics.face@1.0-adapter-helper.so
 
-# IMS
--app/uceShimService/uceShimService.apk
-etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
-etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
-framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
-framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
-lib64/com.qualcomm.qti.imscmservice@1.0.so
-lib64/com.qualcomm.qti.imscmservice@2.0.so
-lib64/com.qualcomm.qti.imscmservice@2.1.so
-lib64/com.qualcomm.qti.uceservice@2.0.so
-lib64/libdiag_system.so
-lib64/libimscamera_jni.so
-lib64/libimsmedia_jni.so
-lib64/libmmrtpdecoder.so
-lib64/libmmrtpencoder.so
-lib64/librcc.so
-lib64/lib-imsvideocodec.so
-lib64/lib-imsvt.so
-lib64/lib-imsvtextutils.so
-lib64/lib-imsvtutils.so
-lib64/vendor.qti.ims.callinfo@1.0.so
-lib64/vendor.qti.ims.rcsconfig@1.0.so
-lib64/vendor.qti.imsrtpservice@1.0.so
-lib64/vendor.qti.hardware.radio.ims@1.0.so
-lib64/vendor.qti.hardware.radio.ims@1.1.so
-lib64/vendor.qti.hardware.radio.ims@1.2.so
-lib64/vendor.qti.hardware.radio.ims@1.3.so
-lib/com.qualcomm.qti.imscmservice@1.0.so
-lib/com.qualcomm.qti.imscmservice@2.0.so
-lib/com.qualcomm.qti.imscmservice@2.1.so
-lib/com.qualcomm.qti.uceservice@2.0.so
-lib/libdiag_system.so
-lib/libimscamera_jni.so
-lib/libimsmedia_jni.so
-lib/libmmrtpdecoder.so
-lib/libmmrtpencoder.so
-lib/librcc.so
-lib/lib-imsvideocodec.so
-lib/lib-imsvt.so
-lib/lib-imsvtextutils.so
-lib/lib-imsvtutils.so
-lib/vendor.qti.ims.callinfo@1.0.so
-lib/vendor.qti.ims.rcsconfig@1.0.so
-lib/vendor.qti.imsrtpservice@1.0.so
-lib/vendor.qti.hardware.radio.ims@1.0.so
-lib/vendor.qti.hardware.radio.ims@1.1.so
-lib/vendor.qti.hardware.radio.ims@1.2.so
-lib/vendor.qti.hardware.radio.ims@1.3.so
--priv-app/ims/ims.apk
+# IMS - from.beryllium - PKQ1.180729.001
+-app/uceShimService/uceShimService.apk|0356d0779af006bbcc72a89f65ccd7db39bdb5e3
+etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml|8d25bd7b79baf266950eb484c1a28817f891aec2
+etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml|998076243537f61f3683a3c083f7b27510617368
+framework/com.qualcomm.qti.imscmservice-V2.0-java.jar|eaa9ed4b603ba04c707d935499ab004ce25fa8ed
+framework/com.qualcomm.qti.imscmservice-V2.1-java.jar|8c649128f7551da974b887d2f2db7e5ceb443101
+lib64/com.qualcomm.qti.imscmservice@1.0.so|a27fdfad8cd7da6d41888b54eeea7c61dfc9d3aa
+lib64/com.qualcomm.qti.imscmservice@2.0.so|5e785dad0bf5fbdbcbf6283db3735c0297778ee8
+lib64/com.qualcomm.qti.imscmservice@2.1.so|6760f932aa557407d6ef7433f3193d7cc50943c5
+lib64/com.qualcomm.qti.uceservice@2.0.so|ddbdb0a2bf6d786aabc3b7545da629037c4f1b65
+lib64/libdiag_system.so|5ce889cb0db762e8aea02d3683b100137e3b2991
+lib64/libimscamera_jni.so|7ab68df769ef7e5693f6d9eb77e96b7613f5c653
+lib64/libimsmedia_jni.so|5d93fc3f7c58115c98727cd1d7ec7ad171b50259
+lib64/libmmrtpdecoder.so|a7f028cee1bcba39737addda39fd066431308888
+lib64/libmmrtpencoder.so|b608524ecc26f5f314cf4010e1069916fa509e33
+lib64/librcc.so|359cb98a7fc32d24055d354b86e19ab496f2e853
+lib64/lib-imsvideocodec.so|54cd00ebfc7415fef4c27e4dd5024e8a462f9871
+lib64/lib-imsvt.so|ef8153b16fb4407a598dbd1cc379397a5a787491
+lib64/lib-imsvtextutils.so|fdc24d19805793a5ab9f495d24254c804755efee
+lib64/lib-imsvtutils.so|9fceee51b44b15381a7d814738ca9be0ef90674d
+lib64/vendor.qti.ims.callinfo@1.0.so|4e604aa0a5b5ecfff2f5e89d4648ba80fbe235ce
+lib64/vendor.qti.ims.rcsconfig@1.0.so|a6f09c2b8b94e11c32b4d0aa387149925fff3248
+lib64/vendor.qti.imsrtpservice@1.0.so|bce44cdceab46183699e4e3c2f073f600c550b6a
+lib64/vendor.qti.hardware.radio.ims@1.0.so|600d255523c17e4f4d0e15e5c809b3b3e08bbd32
+lib64/vendor.qti.hardware.radio.ims@1.1.so|ae6118addf515f1b95088e1c5421a09857069824
+lib64/vendor.qti.hardware.radio.ims@1.2.so|9dc7c7579f58ab315bd6aff5ffe41631402ffbaa
+lib64/vendor.qti.hardware.radio.ims@1.3.so|570885496129617ffa6ccc7429d28b438dac47c3
+lib/com.qualcomm.qti.imscmservice@1.0.so|814e77fd17769c352420c24b8d424df24e5441be
+lib/com.qualcomm.qti.imscmservice@2.0.so|14eea987ecf3d51eb1e8dd7f056c6cd6ccc5274f
+lib/com.qualcomm.qti.imscmservice@2.1.so|be080e5166c09d5cd873675a5b71d8547ef4a4dd
+lib/com.qualcomm.qti.uceservice@2.0.so|acdf4da26cd9b4d50fde740fd8799d5684bd2cb6
+lib/libdiag_system.so|12ef075e9e88883cae48ab3dd872f7d8272cad2e
+lib/libimscamera_jni.so|b0eedf282b74d0e08097e6598667d4c8571f7185
+lib/libimsmedia_jni.so|6fa4b46015b2b0fee092e784c6893894f3e0329f
+lib/libmmrtpdecoder.so|726d6f0711aa348be353516a111812b7184ac697
+lib/libmmrtpencoder.so|06b57e67a9f826a6474bf2e88bc3ef08e7c7a2cc
+lib/librcc.so|83ae225c9d710c20e216084dbe57ba866281fa8b
+lib/lib-imsvideocodec.so|9abc284dde6aa3efa5aaa4c5175f1669fad921bd
+lib/lib-imsvt.so|39ac538b0c80cc5f1ad270e334ecfadbc3256ba5
+lib/lib-imsvtextutils.so|1e805abd9170901274e7825ccbceb953e196aaf2
+lib/lib-imsvtutils.so|27b400c533d95742d3dc55303c88c84edba7d6ff
+lib/vendor.qti.ims.callinfo@1.0.so|d0ece8ef677447bc9d952512ee1be8f4fb97cba6
+lib/vendor.qti.ims.rcsconfig@1.0.so|fc99df1f7f23f60ead2daee061d187647c5f82c9
+lib/vendor.qti.imsrtpservice@1.0.so|af72b35525652ac96f6985c9ee64cef393e31c9d
+lib/vendor.qti.hardware.radio.ims@1.0.so|6cef383ea306c901f2314e0c01899c3afc1dd31e
+lib/vendor.qti.hardware.radio.ims@1.1.so|cee4601d4b1c65dd4dbdabe036e31e91d98aff3e
+lib/vendor.qti.hardware.radio.ims@1.2.so|3ddb60258778e6876a88e4f5dafbae7728518e2f
+lib/vendor.qti.hardware.radio.ims@1.3.so|921b5241c5f4542c7276f296acf0cc4497dda6bd
+-priv-app/ims/ims.apk|426b922bb43c24239e1cff8d6cca9971cf751332
 
 # Perf
 lib64/vendor.qti.hardware.iop@1.0.so
@@ -117,18 +117,18 @@ lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.iop@2.0.so
 lib/vendor.qti.hardware.perf@1.0.so
 
-# QMI
-etc/permissions/qti_libpermissions.xml
-etc/permissions/qti_permissions.xml
+# QMI - from.beryllium - PKQ1.180729.001
+etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
+etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
 
-# RIL
--app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml
-framework/qcrilhook.jar
-framework/qti-telephony-common.jar
-framework/QtiTelephonyServicelibrary.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+# RIL - from.beryllium - PKQ1.180729.001
+-app/QtiTelephonyService/QtiTelephonyService.apk|cd17c833cc6ab3fa0985840261dbfb0a3b17b729
+etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
+etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
+framework/qcrilhook.jar|ba4f1656deda5d14120e79cba892b4f0b96e1607
+framework/qti-telephony-common.jar|037cd65d6f5ff55ac270a86d08b9b3cf894d04e6
+framework/QtiTelephonyServicelibrary.jar|12e6721db2f5809e62d2409ec096f7f405acebea
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|62c9888a00837e713f981a2089879a02822a545b
 
 # SDM
 lib64/libsdm-disp-apis.so
