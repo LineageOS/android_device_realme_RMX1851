@@ -64,10 +64,3 @@ on property:sys.boot_completed=1
 
 on property:vold.decrypt=trigger_restart_framework
     restart vendor.audio-hal-2-0
-
-on boot
-
-service oppo_fingerprints_sh /vendor/bin/sh /vendor/bin/init.oppo.fingerprints.sh
-    class main
-    user root
-    oneshot

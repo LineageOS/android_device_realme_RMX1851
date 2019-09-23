@@ -66,7 +66,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
+    $(LOCAL_PATH)/fingerprint/vendor.oppo.hardware.biometrics.fingerprint@2.1-service.rc:system/etc/init/vendor.oppo.hardware.biometrics.fingerprint@2.1-service.rc
 
 # HIDL
 PRODUCT_PACKAGES += \
