@@ -1,10 +1,10 @@
-# Audio - from enchilada - PKQ1.180716.001
-vendor/lib64/soundfx/libvolumelistener.so:lib64/soundfx/libvolumelistener.so|2dffcd0bde20f5f1830918146c9f40c02bbbae9f
-vendor/lib/soundfx/libvolumelistener.so:lib/soundfx/libvolumelistener.so|117f8b7d834b4587dc8c8c5d15fada85b877ed26
+# Audio
+vendor/lib64/soundfx/libvolumelistener.so:lib64/soundfx/libvolumelistener.so
+vendor/lib/soundfx/libvolumelistener.so:lib/soundfx/libvolumelistener.so
 
-# Bluetooth (aptX) - from crosshatch - PD1A.180720.030
-lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
-lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
+# Audio KTV
+lib64/vendor.oppo.hardware.ktv@1.0.so
+lib/vendor.oppo.hardware.ktv@1.0.so
 
 # CNE
 etc/permissions/cneapiclient.xml
@@ -42,6 +42,22 @@ lib/libdpmtcm.so
 
 # Display postprocessing
 lib64/vendor.display.color@1.0.so
+
+# Fingerprint sensor
+framework/vendor.oppo.hardware.biometrics.fingerprint-V2.1-java.jar
+framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
+lib64/android.frameworks.fingerprintservice@1.0.so
+lib64/vendor.oppo.hardware.biometrics.face@1.0.so
+lib64/vendor.oppo.hardware.biometrics.fingerprintpay@1.0.so
+lib64/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
+lib64/vendor.qti.hardware.biometrics.face@1.0.so
+lib64/vendor.qti.hardware.biometrics.face@1.0-adapter-helper.so
+lib/android.frameworks.fingerprintservice@1.0.so
+lib/vendor.oppo.hardware.biometrics.face@1.0.so
+lib/vendor.oppo.hardware.biometrics.fingerprintpay@1.0.so
+lib/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
+lib/vendor.qti.hardware.biometrics.face@1.0.so
+lib/vendor.qti.hardware.biometrics.face@1.0-adapter-helper.so
 
 # IMS
 -app/uceShimService/uceShimService.apk
@@ -93,26 +109,6 @@ lib/vendor.qti.hardware.radio.ims@1.2.so
 lib/vendor.qti.hardware.radio.ims@1.3.so
 -priv-app/ims/ims.apk
 
-# Misc dependencies
-lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
-lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
-lib64/vendor.xiaomi.hardware.misys@1.0.so
-lib64/vendor.xiaomi.hardware.misys@2.0.so
-lib64/vendor.xiaomi.hardware.touchfeature@1.0.so
-lib/android.hardware.soundtrigger@2.0-core.so
-
-# Mlipay
-lib64/vendor.xiaomi.hardware.mfidoca@1.0.so
-lib64/vendor.xiaomi.hardware.mlipay@1.0.so
-lib64/vendor.xiaomi.hardware.mlipay@1.1.so
-lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
-lib64/vendor.xiaomi.hardware.mtdservice@1.1.so
-lib64/vendor.xiaomi.hardware.mtdservice@1.2.so
-lib64/vendor.xiaomi.hardware.tidaservice@1.0.so
-lib64/vendor.xiaomi.hardware.tidaservice@1.1.so
-lib/vendor.xiaomi.hardware.mtdservice@1.0.so
-lib/vendor.xiaomi.hardware.vsimapp@1.0.so
-
 # Perf
 lib64/vendor.qti.hardware.iop@1.0.so
 lib64/vendor.qti.hardware.iop@2.0.so
@@ -121,11 +117,8 @@ lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.iop@2.0.so
 lib/vendor.qti.hardware.perf@1.0.so
 
-# Power-off charging daemon
--sbin/charger:sbin/chargeonlymode;rootfs|f048d2cc20783ba1a608b73d440b3053af6ec9fd
-
 # QMI
-etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 
 # RIL
