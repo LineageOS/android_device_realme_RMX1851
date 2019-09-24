@@ -20,6 +20,7 @@
 
 # Light
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.RMX1851                                           u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti                                       u:object_r:hal_neuralnetworks_default_exec:s0
 
 # Power supply
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi[0-9]-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/ac(/.*)?  u:object_r:sysfs_battery_supply:s0
