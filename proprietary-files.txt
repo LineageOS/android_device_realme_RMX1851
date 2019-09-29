@@ -117,9 +117,6 @@ framework/QtiTelephonyServicelibrary.jar|12e6721db2f5809e62d2409ec096f7f405acebe
 # SDM
 lib64/libsdm-disp-apis.so
 
-# Soter
--app/SoterService/SoterService.apk
-
 # WiFi Display
 bin/wfdservice
 etc/init/wfdservice.rc
