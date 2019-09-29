@@ -43,22 +43,6 @@ lib/libdpmtcm.so
 # Display postprocessing
 lib64/vendor.display.color@1.0.so
 
-# Fingerprint sensor
-framework/vendor.oppo.hardware.biometrics.fingerprint-V2.1-java.jar
-framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
-lib64/android.frameworks.fingerprintservice@1.0.so
-lib64/vendor.oppo.hardware.biometrics.face@1.0.so
-lib64/vendor.oppo.hardware.biometrics.fingerprintpay@1.0.so
-lib64/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
-lib64/vendor.qti.hardware.biometrics.face@1.0.so
-lib64/vendor.qti.hardware.biometrics.face@1.0-adapter-helper.so
-lib/android.frameworks.fingerprintservice@1.0.so
-lib/vendor.oppo.hardware.biometrics.face@1.0.so
-lib/vendor.oppo.hardware.biometrics.fingerprintpay@1.0.so
-lib/vendor.oppo.hardware.biometrics.fingerprint@2.1.so
-lib/vendor.qti.hardware.biometrics.face@1.0.so
-lib/vendor.qti.hardware.biometrics.face@1.0-adapter-helper.so
-
 # IMS - from.beryllium - PKQ1.180729.001
 -app/uceShimService/uceShimService.apk|0356d0779af006bbcc72a89f65ccd7db39bdb5e3
 etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml|8d25bd7b79baf266950eb484c1a28817f891aec2
