@@ -65,6 +65,7 @@ DEVICE_PROVISIONED=1
 ril.subscription.types=NV,RUIM
 persist.rcs.supported=0
 persist.radio.hvolte.enable=1
+persist.sys.fflag.override.settings_network_and_internet_v2=true
 ro.telephony.default_network=22,20
 persist.radio.multisim.config=dsds
 persist.radio.custom_exp_ecc=1
