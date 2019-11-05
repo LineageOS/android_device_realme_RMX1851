@@ -137,10 +137,5 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
-# Verified Boot
-BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
-
 # Inherit from the proprietary version
 -include vendor/realme/RMX1851/BoardConfigVendor.mk
