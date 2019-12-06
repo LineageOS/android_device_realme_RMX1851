@@ -238,15 +238,52 @@ function configure_zram_parameters() {
         echo lz4 > /sys/block/zram0/comp_algorithm
     fi
 
+#ifdef VENDOR_EDIT
+#//Huacai.Zhou@PSW.Kernel.mm,2018-12-06, Modify for config zramsize according to ramsize
     if [ -f /sys/block/zram0/disksize ]; then
-        if [ $MemTotal -le 524288 ]; then
+        if [ $MemTotal -le 524288 ] && [ "$low_ram" == "true" ]; then
+            echo lz4 > /sys/block/zram0/comp_algorithm
             echo 402653184 > /sys/block/zram0/disksize
-        elif [ $MemTotal -le 1048576 ]; then
+            echo 160 > /proc/sys/vm/swappiness
+            echo 60 > /proc/sys/vm/direct_swappiness
+        elif [ $MemTotal -le 1048576 ] && [ "$low_ram" == "true" ]; then
+            echo lz4 > /sys/block/zram0/comp_algorithm
             echo 805306368 > /sys/block/zram0/disksize
+            echo 160 > /proc/sys/vm/swappiness
+            echo 60 > /proc/sys/vm/direct_swappiness
+        elif [ $MemTotal -le 2097152 ]; then
+            #config 1GB+256M zram size with memory 2 GB
+            echo lz4 > /sys/block/zram0/comp_algorithm
+            echo 1342177280 > /sys/block/zram0/disksize
+            echo 180 > /proc/sys/vm/swappiness
+            echo 40 > /proc/sys/vm/direct_swappiness
+        elif [ $MemTotal -le 3145728 ]; then
+            #config 1GB +512M+256M zram size with memory 3 GB
+            echo lz4 > /sys/block/zram0/comp_algorithm
+            echo 1879048192 > /sys/block/zram0/disksize
+            echo 160 > /proc/sys/vm/swappiness
+            echo 60 > /proc/sys/vm/direct_swappiness
+        elif [ $MemTotal -le 4194304 ]; then
+            #config 2GB+512MB zram size with memory 4 GB
+            echo lz4 > /sys/block/zram0/comp_algorithm
+            echo 2684354560 > /sys/block/zram0/disksize
+            echo 160 > /proc/sys/vm/swappiness
+            echo 60 > /proc/sys/vm/direct_swappiness
+        elif [ $MemTotal -le 6291456 ]; then
+            #config 2GB+512M zram size with memory 6 GB
+            echo lz4 > /sys/block/zram0/comp_algorithm
+            echo 2684354560 > /sys/block/zram0/disksize
+            echo 160 > /proc/sys/vm/swappiness
+            echo 60 > /proc/sys/vm/direct_swappiness
         else
-            # Set Zram disk size=1GB for >=2GB Non-Go targets.
-            echo 1073741824 > /sys/block/zram0/disksize
+            #Kui.Zhang@PSW.Kernel.Performance, 2019/02/18
+            #config 2GB+192M zram size with memory 8 GB
+            echo lz4 > /sys/block/zram0/comp_algorithm
+            echo 2348810240 > /sys/block/zram0/disksize
+            echo 160 > /proc/sys/vm/swappiness
+            echo 60 > /proc/sys/vm/direct_swappiness
         fi
+#endif /*VENDOR_EDIT*/
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
     fi
@@ -380,6 +417,22 @@ else
 
             vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
             echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+
+#ifdef VENDOR_EDIT
+            # Kui.Zhang@PSW.TEC.Kerenl.Performance, 2019/02/14
+	    # set minfree 1/1/1/1/1.3/1.3 multiple times for 6G && 8G memory
+            rem_minfree_0="${minfree_series%%,*}"
+            if [ $MemTotal -gt 4194304 ]; then
+                rem_minfree_4=$((rem_minfree_4*13/10))
+		rem_minfree_5=$((minfree_5*13/10))
+            else
+                # tangshaoqing@RM.BSP.Kerenl.Performance, 2019/02/18
+                # set minfree 1/1/1/1/1.5/1.5 multiple times forless than 6G memory
+                rem_minfree_4=$((rem_minfree_4*13/10))
+                rem_minfree_5=$((minfree_5*13/10))
+            fi
+	    echo "$rem_minfree_0,$rem_minfree_1,$rem_minfree_2,$rem_minfree_3,$rem_minfree_4,$rem_minfree_5" > /sys/module/lowmemorykiller/parameters/minfree
+#endif
         else
             # Set LMK series, vmpressure_file_min for 32 bit non-go targets.
             # Disable Core Control, enable KLMK for non-go 8909.

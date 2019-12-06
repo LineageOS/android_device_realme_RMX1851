@@ -428,8 +428,14 @@ case "$buildvariant" in
         #set default loglevel to KERN_INFO
         echo "6 6 1 7" > /proc/sys/kernel/printk
         ;;
+    #if VENDOR_EDIT
+    #Fei.Mo@PSW.BSP.Bootflaw, 2018/12/04, Add for modified kernel log level
+    "user")
+        echo "1 6 1 7" > /proc/sys/kernel/printk
+        ;;
+    #endif
     *)
         #set default loglevel to KERN_WARNING
-        echo "4 4 1 4" > /proc/sys/kernel/printk
+        #echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
 esac

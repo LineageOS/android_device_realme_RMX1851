@@ -1,0 +1,310 @@
+##################################################################################
+### VENDOR_EDIT, OPPO All rights reserved.
+###
+### File: - init.oppo.rc
+### Author: jiangyg@PM
+###
+### ------------------------------- Revision History: ----------------------------
+### <author>                        <data>       <version>   <desc>
+### ------------------------------------------------------------------------------
+### jiangyg@PM                     2013-10-21                Create this file
+##################################################################################
+
+#Runsheng.Pei@PSW.AD.Storage.ReservePartition.1207580, 2017/12/29, Add for new reserve partition
+#Xuefeng.Peng@PSW.AD.Storage.ReservePartition.1207580, 2018/11/19, Add for change opporeserve mount point for google GSI test
+import /vendor/etc/init/hw/init.oppo.reserve.rc
+
+#ifdef VENDOR_EDIT
+#Ran.Chen@BSP.Fingerprint.Basic, 2018/06/06, Add for secure common rc
+#Ran.Chen@BSP.Fingerprint.Basic, 2018/07/06, Add for face init.rc
+import /vendor/etc/init/hw/init.oppo.face.rc
+import /vendor/etc/init/hw/init.oppo.seccommon.rc
+#endif
+
+#ifdef VENDOR_EDIT
+#Hongyu.lu@BSP.Fingerprint.Basic, 2018/11/24, Add for face init.rc
+#Ran.Chen@BSP.Fingerprint.Basic, 2018/06/06, Add for secure common rc(adnroid P)
+import /init.oppo.face.rc
+import /init.oppo.seccommon.rc
+#endif
+
+#ifdef VENDOR_EDIT
+#wangmengmeng@swdp2 2017/12/13, add for oiface RUS feature
+on post-fs-data
+    mkdir /data/oiface 0700 system system
+#   mkdir /data/hypnus 0700 system system
+    mkdir /data/elsa 0700 system system
+    mkdir /data/kneuron 0700 system system
+#endif
+
+#ifdef VENDOR_EDIT^M
+#chenghao@Swdp.shanghai 2018/08/08, add for joystick RUS feature
+    mkdir /data/joystick 0700 system system
+#endif
+
+#ifdef VENDOR_EDIT
+#Pingping.Yang@swdp 2018/11/07, add for omedia RUS feature
+    mkdir /data/oppo_lib/omedia 0700 system system
+#endif
+
+#ifdef VENDOR_EDIT
+#Rongchun.zhang@PSW.MM.Display.SF.Feature.1129602, 2018/06/11, add dor rom update
+    chmod 0644 /data/oppo/multimedia/oppo_display_perf_list.xml
+#endif
+
+#ifdef VENDOR_EDIT
+#Jianchao.Shi@Mobile.BSP.CHG 2018/03/20, sjc Add for bsp criticallog
+service bspCriticalLog /system/bin/bspCriticalLog
+    user system
+    group system
+    class main
+#endif
+
+#ifdef VENDOR_EDIT
+# Mark.Yao@PSW.MM.Display.Feature,2018/05/17, Add for oppo display service
+service oppodisplay /system/bin/oppodisplay
+    class core
+    user system
+    group graphics drmrpc readproc
+#endif
+
+#ifdef VENDOR_EDIT
+#YaJun.Li@PSW.MM.Daemon.Atlas.1332843,2018/10/12,add for atlas
+service atlasservice /system/bin/atlasservice
+    class core
+    user system
+    group graphics drmrpc readproc
+#endif
+
+#ifdef VENDOR_EDIT
+#zhunn@OnLineRD.AirService.RIL, 2015/1/28, Add for cdma card cannot send sms in Yiwu
+#WeiHong.Li@Mobile.Network, 2015/09/11, Add suid_dumpable to capture rild's tombstone according to case 02090380
+#Zhengpeng@OnLineRD.AirService.RIL, 2013/11/4, Add for create opponvitems dir
+on boot
+    mkdir /data/opponvitems  0771 radio radio
+    write /proc/sys/fs/suid_dumpable 1
+    setprop persist.vendor.radio.force_on_dc true
+    chmod 0660 /dev/mdmreason
+    chown system system /dev/mdmreason
+#endif
+#ifdef VENDOR_EDIT
+#WeiHong.Li@Mobile.Network, 2015/09/11, disalbe suid_dumpable if release_type=true to pass cts test
+on property:ro.build.release_type=true
+    write /proc/sys/fs/suid_dumpable 0
+#endif
+
+#ifdef VENDOR_EDIT
+#Jianchao.Shi@Mobile.BSP.CHG 2018/03/20, sjc Add for otg_switch
+on property:persist.sys.oppo.otg_support=true
+    write /sys/class/power_supply/usb/otg_switch 1
+
+on property:persist.sys.oppo.otg_support=false
+    write /sys/class/power_supply/usb/otg_switch 0
+    setprop sys.engineermode.debug.otg false
+#endif
+
+#ifdef VENDOR_EDIT
+#WeiHong.Li@Mobile.Network, 2015/09/11, disalbe suid_dumpable if release_type=true to pass cts test
+on property:ro.build.release_type=true
+    write /proc/sys/fs/suid_dumpable 0
+#endif
+
+#ifdef VENDOR_EDIT
+##Jianhua.Sun@BuildConfig.0, 2017/02/07, Add for delete some version facebook app deps file after OTA. [Qiang.Shao@Prd6.System.Package]
+on property:oppo.facebook.del_deps=com.facebook.katana
+    rm /data/data/com.facebook.katana/dex/deps
+
+on property:oppo.facebook.del_deps=com.facebook.orca
+    rm /data/data/com.facebook.orca/dex/deps
+
+on property:oppo.facebook.del_deps=com.facebook.pages.app
+    rm /data/data/com.facebook.pages.app/dex/deps
+
+on property:oppo.facebook.del_deps=com.facebook.moments
+    rm /data/data/com.facebook.moments/dex/deps
+
+on property:oppo.facebook.del_deps=com.facebook.workchat
+    rm /data/data/com.facebook.workchat/dex/deps
+
+on property:oppo.facebook.del_deps=com.facebook.work
+    rm /data/data/com.facebook.work/dex/deps
+
+on property:oppo.facebook.del_deps=com.facebook.groups
+    rm /data/data/com.facebook.groups/dex/deps
+#endif
+
+#ifdef VENDOR_EDIT
+##zhangliqun@Connectivity.WiFi.Production,2018/04/23, Add for wifi rf testing. [From: Min.Yi@EXP.CN.WiFi.Hardware]
+service wifirfmodetest /system/bin/wifirftest
+    class main
+    socket wifirf stream 0660 system system
+    user root
+    oneshot
+    disabled
+
+on property:oppo.wifirftest.enable=1
+    start wifirfmodetest
+
+on property:oppo.wifirftest.enable=0
+    stop wifirfmodetest
+#endif
+
+#ifdef VENDOR_EDIT
+#Jianrong.Zheng@PSW.AD.Power.Breathing.1055235, 2015/12/14, Add for oppo breath light
+on boot
+    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/white/device/grpfreq
+    chown system system /sys/class/leds/white/device/grppwm
+    chown system system /sys/class/leds/white/device/blink
+    chown system system /sys/class/leds/white/blink
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#gaolong@swdp2.shanghai 2018/10/31, Add for run the init.oppo.hypnus.sh on property
+service hypnus_context /system/bin/sh /system/etc/init.oppo.hypnus.sh
+    user root
+    disabled
+    oneshot
+    seclabel u:r:hypnus_context:s0
+
+on property:persist.sys.enable.hypnus=*
+    start hypnus_context
+
+service hypnus_logging /system/bin/sh /system/etc/init.oppo.hypnus_logging.sh
+    user root
+    disabled
+    oneshot
+
+on property:persist.sys.oppo.junklog=*
+    start hypnus_logging
+#endif
+
+#ifdef VENDOR_EDIT
+#zhoumingjun@swdp2.shanghai 2018/07/19, Add for run the init.oppo.kneuron.sh on property
+on boot
+    service kneuron_context /system/bin/sh /system/etc/init.oppo.kneuron.sh
+    user root
+    disabled
+    oneshot
+    seclabel u:r:rutilsdaemon:s0
+
+    on property:persist.sys.enable.kneuron=*
+    start kneuron_context
+#endif
+
+#ifdef VENDOR_EDIT
+#shiguang.han@Swdp.shanghai, 2017/5/23 Add for elsa
+#Jindian.Guan@Camera, 2018/04/03, Add for led calibration
+on boot
+    mkdir /persist/camera 0777 system system
+    chmod 0755 /dev/cpuset
+    mkdir /dev/freezer
+    mount cgroup none /dev/freezer freezer
+    chown system system /dev/freezer
+    chmod 0755 /dev/freezer/
+
+    chown system system /dev/freezer/cgroup.procs
+    chmod 0666 /dev/freezer/cgroup.procs
+    chown system system /dev/freezer/tasks
+    chmod 0666 /dev/freezer/tasks
+
+    chown system system /dev/cpuset/cgroup.procs
+    chown system system /dev/cpuset/foreground/cgroup.procs
+    chown system system /dev/cpuset/foreground/boost/cgroup.procs
+    chown system system /dev/cpuset/background/cgroup.procs
+    chown system system /dev/cpuset/system-background/cgroup.procs
+    chown system system /dev/cpuset/top-app/cgroup.procs
+
+    chmod 0666 /dev/cpuset/foreground/cgroup.procs
+    chmod 0666 /dev/cpuset/foreground/boost/cgroup.procs
+    chmod 0666 /dev/cpuset/background/cgroup.procs
+    chmod 0666 /dev/cpuset/system-background/cgroup.procs
+    chmod 0666 /dev/cpuset/top-app/cgroup.procs
+    chmod 0666 /dev/cpuset/cgroup.procs
+
+    chown system system /dev/stune/background/cgroup.procs
+    chown system system /dev/stune/top-app/cgroup.procs
+    chown system system /dev/stune/foreground/cgroup.procs
+    chown system system /dev/stune/rt/cgroup.procs
+    chmod 0666 /dev/stune/background/cgroup.procs
+    chmod 0666 /dev/stune/top-app/cgroup.procs
+    chmod 0666 /dev/stune/foregroud/cgroup.procs
+    chmod 0666 /dev/stune/rt/cgroup.procs
+#endif
+#ifdef VENDOR_EDIT
+#wenhua.Leng@SWDP.MM.Display.LCD, 2018/4/18 Add for display
+    chown system system /sys/kernel/oppo_display/dump_info
+    chown system system /sys/kernel/oppo_display/hbm
+    chown system system /sys/kernel/oppo_display/seed
+    chown system system /sys/kernel/oppo_display/cabc
+    chown system system /sys/kernel/oppo_display/ffl_set
+    chown system system /sys/kernel/oppo_display/dimlayer_hbm
+    chown system system /sys/kernel/oppo_display/force_screenfp
+    chown system system /sys/kernel/oppo_display/notify_fppress
+
+    chmod 0666 /sys/kernel/oppo_display/dump_info
+    chmod 0666 /sys/kernel/oppo_display/hbm
+    chmod 0666 /sys/kernel/oppo_display/seed
+    chmod 0666 /sys/kernel/oppo_display/cabc
+    chmod 0666 /sys/kernel/oppo_display/ffl_set
+    chmod 0666 /sys/kernel/oppo_display/dimlayer_hbm
+    chmod 0666 /sys/kernel/oppo_display/force_screenfp
+    chmod 0666 /sys/kernel/oppo_display/notify_fppress
+#Jie.Hu@SWDP.MM.Display.LCD, 2018/4/19 Add for display
+    chown system system /sys/kernel/oppo_display/power_status
+    chown system system /sys/kernel/oppo_display/sau_closebl_node
+    chown system system /sys/kernel/oppo_display/esd_status
+
+    chmod 0666 /sys/kernel/oppo_display/power_status
+    chmod 0666 /sys/kernel/oppo_display/sau_closebl_node
+    chmod 0666 /sys/kernel/oppo_display/esd_status
+#endif /* VENDOR_EDIT */
+
+# ifdef COLOROS_EDIT
+# Yong.Chen@Plf.Framework, 2018/12/08, Add for kernel hotfix
+on post-fs-data
+    mkdir /data/oppo/oae 0701  root root
+    mkdir /data/oppo/oae/s 0700  root root
+    mkdir /data/oppo/oae/c 0707  root root
+    mkdir /data/oppo/oae/d 0707  root root
+    restorecon_recursive /data/oppo/oae
+
+service oae /system/bin/oae_server -s
+    seclabel u:r:oae_server:s0
+    class late_start
+    user root
+    group root log
+# endif /* COLOROS_EDIT*/
+
+#ifdef COLOROS_EDIT
+#Yong.Chen@Plf.Framework, 2018/12/08, Add for record to file of receiving kevent action
+on post-fs-data
+    mkdir /data/oppo/kevent 0775 system system
+#endif /* COLOROS_EDIT */
+
+# ifdef COLOROS_EDIT
+#Yong.Chen@Plf.Framework, 2018/12/08, Add for record to file of receiving kevent action
+service oppo_kevents /system/bin/oppo_kevent
+    class late_start
+    user system
+    group root system
+# endif /* COLOROS_EDIT */
+
+#ifdef VENDOR_EDIT
+#Haoran.Zhang@PSW.AD.1377834, 2018/05/10, Add for disable black monitor
+on boot
+    write /proc/blackCheck "4 90000 0"
+
+#criticallog will do rus update, so it should be started after data is ready
+on post-fs-data
+   restart criticallog
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Xiao.Liang@Connectivity.WiFi.Basic.1568258, 2018/11/30, Add for wifi sniffer service on Android P
+on property:oppo.wifi.sniffer.copysnifferlog=1
+    exec u:r:rutilsdaemon:s0 root root -- /system/bin/mkdir -m 0771 /sdcard/oppo_log/
+    exec u:r:rutilsdaemon:s0 root root -- /system/bin/cp -R /data/vendor/wifi/sniffer_log/  /sdcard/oppo_log/
+    exec u:r:rutilsdaemon:s0 root root -- /system/bin/rm -rf /data/vendor/wifi/sniffer_log/
+#endif /* VENDOR_EDIT */
+
