@@ -4,10 +4,4 @@ service vendor.fps_hal.RMX1851 /vendor/bin/hw/android.hardware.biometrics.finger
     # /data is mounted.
     class late_start
     user system
-    group system input uhid
-    writepid /dev/cpuset/system-background/tasks
-
-service oppo_fingerprints_sh /vendor/bin/sh /vendor/bin/init.oppo.fingerprints.sh
-    class main
-    user root
-    oneshot
+    group system input
