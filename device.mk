@@ -252,9 +252,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service \
-    power.sdm710
+    android.hardware.power@1.1-service-qti
 
 # QTI
 PRODUCT_COPY_FILES += \
