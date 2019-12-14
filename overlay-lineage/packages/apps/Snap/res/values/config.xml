@@ -23,4 +23,14 @@
 
     <!-- Enable support for camera api v2 -->
     <bool name="support_camera_api_v2">true</bool>
+
+    <!-- Reduce noise level -->
+    <string name="pref_camera_noise_reduction_default"  translatable="false">high-quality</string>
+
+    <!-- Default jpeg quality -->
+    <string name="pref_camera_jpegquality_default" translatable="false">100</string>
+
+    <!-- Default picture size -->
+    <string name="pref_camera2_picturesize_default" translatable="false">4608x3456</string>
+
 </resources>
