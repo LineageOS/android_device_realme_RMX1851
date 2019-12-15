@@ -1,0 +1,2 @@
+allow adsprpcd oppo_ver_proc:dir { search };
+allow adsprpcd oppo_ver_proc:file r_file_perms;

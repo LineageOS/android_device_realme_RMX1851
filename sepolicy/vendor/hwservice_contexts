@@ -1,0 +1,7 @@
+vendor.oppo.hardware.biometrics.fingerprint::IBiometricsFingerprint          u:object_r:hal_fingerprint_oppo_hwservice:s0
+vendor.oppo.hardware.camera.oppopostproc::ICameraPostProc                    u:object_r:hal_camera_hwservice:s0
+vendor.oppo.hardware.camera.oppoHalAssist::IOppoHalAssist                    u:object_r:hal_camera_hwservice:s0
+vendor.oppo.hardware.camera.oppoAlgoProcessService::IOppoAlgoProcessService  u:object_r:hal_camera_hwservice:s0
+vendor.oppo.hardware.cryptoeng::ICryptoeng                                   u:object_r:hal_cryptoeng_hwservice:s0
+vendor.oppo.hardware.hypnus::IHypnusUtil                                     u:object_r:hal_hypnus_hwservice:s0
+vendor.oppo.hardware.ktv::IKtv                                               u:object_r:hal_camera_hwservice:s0

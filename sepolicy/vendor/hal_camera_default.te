@@ -1,0 +1,14 @@
+allow hal_camera_default cam_proc:file { open read write getattr };
+allow hal_camera_default mnt_vendor_file:file { create read write open getattr };
+allow hal_camera_default persist_camera_file:dir { search write add_name };
+allow hal_camera_default persist_camera_file:file { create read write open getattr };
+allow hal_camera_default proc_meminfo:file { read open getattr };
+allow hal_camera_default qti_debugfs:file r_file_perms;
+allow hal_camera_default sysfs:file { read open };
+allow hal_camera_default sysfs_net:dir { search };
+allow hal_camera_default sysfs_net:file { read open };
+
+get_prop(hal_camera_default, bg_daemon_prop)
+get_prop(hal_camera_default, vendor_radio_prop)
+get_prop(hal_camera_default, vendor_camera_prop)
+set_prop(hal_camera_default, vendor_camera_prop)

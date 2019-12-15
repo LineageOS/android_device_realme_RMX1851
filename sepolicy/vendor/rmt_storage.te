@@ -1,0 +1,6 @@
+#allow rmt_storage block_device:blk_File rw_file_perms;
+allow rmt_storage oppo_ver_proc:dir search;
+allow rmt_storage oppo_ver_proc:file r_file_perms;
+allow rmt_storage sysfs:file r_file_perms;
+
+get_prop(rmt_storage, vendor_radio_prop)

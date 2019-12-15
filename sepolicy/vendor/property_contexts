@@ -1,0 +1,59 @@
+# Audio
+persist.oppo.mm.pcmdump             u:object_r:vendor_audio_prop:s0
+sys.oppo.mm.record.type             u:object_r:vendor_audio_prop:s0
+sys.oppo.mm.voice.record            u:object_r:vendor_audio_prop:s0
+vendor.fm.use_audio_session         u:object_r:vendor_audio_prop:s0
+
+# Camera
+oppo.camera.packname                u:object_r:vendor_camera_prop:s0
+oppo.tof.tri.calibration.status     u:object_r:vendor_camera_prop:s0
+oppo.tof.tri.verification.status    u:object_r:vendor_camera_prop:s0
+persist.aec.manual.mode             u:object_r:vendor_camera_prop:s0
+persist.bps.debug                   u:object_r:vendor_camera_prop:s0
+persist.camera.                     u:object_r:vendor_camera_prop:s0
+persist.front.skipdisplay.enable    u:object_r:vendor_camera_prop:s0
+persist.ipe.debug                   u:object_r:vendor_camera_prop:s0
+persist.oppo.camera.                u:object_r:vendor_camera_prop:s0
+persist.sys.assert.panic            u:object_r:vendor_camera_prop:s0
+persist.samsung.camera.log          u:object_r:vendor_camera_prop:s0
+persist.sys.log.ae                  u:object_r:vendor_camera_prop:s0
+persist.sys.log.af                  u:object_r:vendor_camera_prop:s0
+persist.sys.log.awb                 u:object_r:vendor_camera_prop:s0
+persist.watermark.dumpimg           u:object_r:vendor_camera_prop:s0
+ro.build.flavor                     u:object_r:vendor_camera_prop:s0
+ro.camera.                          u:object_r:vendor_camera_prop:s0
+ro.oppo.market.enname               u:object_r:vendor_camera_prop:s0
+ro.oppo.market.name                 u:object_r:vendor_camera_prop:s0
+sys.oppo_ftm_mode                   u:object_r:vendor_camera_prop:s0
+vendor.oppo.camera.                 u:object_r:vendor_camera_prop:s0
+
+# Fingerprint
+oppo.fpc.sw.version                 u:object_r:oppo_fp_prop:s0
+persist.vendor.fingerprint.optical.support u:object_r:oppo_fp_prop:s0
+
+# Keybox
+sys.oppo.bsp.drm.                   u:object_r:cryptoeng_prop:s0
+
+# RIL
+gsm.operator.numeric                u:object_r:vendor_radio_prop:s0
+oppo.device.imeicache               u:object_r:vendor_radio_prop:s0
+oppo.eng.factory.no                 u:object_r:vendor_radio_prop:s0
+persist.oppo.nw.region.lock         u:object_r:vendor_radio_prop:s0
+persist.sys.oppo.region             u:object_r:vendor_radio_prop:s0
+ro.build.version.ota                u:object_r:vendor_radio_prop:s0
+ro.oppo.build.exp                   u:object_r:vendor_radio_prop:s0
+ro.oppo.euex.country                u:object_r:vendor_radio_prop:s0
+ro.oppo.network.serialno            u:object_r:vendor_radio_prop:s0
+ro.oppo.nw.singlecard               u:object_r:vendor_radio_prop:s0
+ro.oppo.operator                    u:object_r:vendor_radio_prop:s0
+ro.oppo.regionmark                  u:object_r:vendor_radio_prop:s0
+ro.oppo.version                     u:object_r:vendor_radio_prop:s0
+ro.rf_version                       u:object_r:vendor_radio_prop:s0
+ro.sys.reserve.integrate            u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.svlte1x               u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.svdo                  u:object_r:vendor_radio_prop:s0
+sys.build.display.full_id           u:object_r:vendor_radio_prop:s0
+sys.oppo.network.rffeature          u:object_r:vendor_radio_prop:s0
+
+# WIFI
+persist.oppo.wlan.macaddress        u:object_r:oppo_wlan_prop:s0

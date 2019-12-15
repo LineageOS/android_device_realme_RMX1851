@@ -1,0 +1,7 @@
+type cam_proc, proc_type;
+type fp_proc, proc_type;
+type nv_data_file, file_type, data_file_type, core_data_file_type;
+type oppo_ver_proc, proc_type;
+type persist_camera_file, file_type;
+type proc_touchpanel, proc_type;
+type sysfs_fingerprint, sysfs_type, fs_type;

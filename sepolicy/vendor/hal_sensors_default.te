@@ -1,0 +1,2 @@
+allow hal_sensors_default proc_touchpanel:dir { read open };
+allow hal_sensors_default vendor_camera_prop:file { read open getattr };

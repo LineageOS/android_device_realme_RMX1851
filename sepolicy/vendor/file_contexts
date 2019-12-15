@@ -1,3 +1,35 @@
-# HALs
+# Camera
+/mnt/vendor/persist/camera(/.*)?                                                                        u:object_r:persist_camera_file:s0
+/vendor/bin/hw/vendor\.oppo\.hardware\.camera\.oppoAlgoProcessService@1\.0-service                      u:object_r:hal_camera_default_exec:s0
+/vendor/bin/hw/vendor\.oppo\.hardware\.ktv@1\.0-service                                                 u:object_r:hal_camera_default_exec:s0
+
+# CryptoEng
+/vendor/bin/hw/vendor\.oppo\.hardware\.cryptoeng@1\.0-service                                           u:object_r:hal_cryptoeng_default_exec:s0
+
+# Debugfs
+/sys/kernel/debug/ion/clients(/.*)?                                                                     u:object_r:qti_debugfs:s0
+/sys/kernel/debug/ion/heaps/system                                                                      u:object_r:qti_debugfs:s0
+/sys/kernel/debug/ion/heaps/ion_mm_heap                                                                 u:object_r:qti_debugfs:s0
+
+# Fingerprint
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.RMX1851                         u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/vendor\.oppo\.hardware\.biometrics\.fingerprint@2\.1-service                             u:object_r:hal_fingerprint_oppo_exec:s0
+
+# Hypnus
+/vendor/bin/hw/vendor\.oppo\.hardware\.hypnus@1\.0-service                                              u:object_r:hal_hypnus_default_exec:s0
+
+# Light
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.RMX1851                                           u:object_r:hal_light_default_exec:s0
+
+# Power supply
+/sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi[0-9]-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/ac(/.*)?  u:object_r:sysfs_battery_supply:s0
+
+# NV
+/data/opponvitems(/.*)?                                                                                 u:object_r:nv_data_file:s0
+/cache/opponvitems(/.*)?                                                                                u:object_r:nv_data_file:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/oppodycnvbk                                                u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/oppostanvbk                                                u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/reserve4                                                   u:object_r:modem_efs_partition_device:s0
+
+# RTC
+/sys/class/rtc/rtc0/hctosys                                                                             u:object_r:sysfs_rtc:s0
