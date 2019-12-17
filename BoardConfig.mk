@@ -65,6 +65,8 @@ TARGET_USE_QTI_BT_STACK := true
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /vendor/bin/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service=27
 
 # Charger Mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
