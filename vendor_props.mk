@@ -1,9 +1,8 @@
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.min.duration.secs=30 \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
-    audio.offload.min.duration.secs=20 \
+    audio.offload.min.duration.secs=30 \
     persist.vendor.audio.avs.afe_api_version=2 \
     persist.vendor.audio.button_jack.profile=volume \
     persist.vendor.audio.button_jack.switch=0 \
@@ -49,7 +48,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    bt.max.hfpclient.connections=1 \
     persist.bluetooth.disableabsvol=true \
     persist.bluetooth.disableinbandringing=false \
     persist.vendor.btstack.enable.splita2dp=true \
@@ -58,16 +56,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.service.bdroid.soc.alwayson=true \
     persist.vendor.service.bt.iot.enablelogging=true \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    vendor.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.light_ae.enable=1 \
     persist.vendor.camera.dualcamera_bokeh=1 \
-    ro.camera.hfr.enable=1 \
-    ro.camera.relight.enable=0 \
-    ro.camera.attr.detect.enable=1 \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
 # CNE
@@ -85,7 +79,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.netmgrd.qos.enable=true \
     persist.vendor.data.profile_update=true \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
@@ -96,7 +89,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display post-processing
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.cabl=0 \
     ro.vendor.display.ad=1 \
     ro.vendor.display.ad.sdr_calib_data=/vendor/etc/OPPO_OLED_AD_calib.cfg \
     ro.vendor.display.cabl=2 \
@@ -114,16 +106,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # FRP
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/bootdevice/by-name/frp \
+    ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=0 \
     debug.sf.disable_backpressure=1 \
-    debug.sf.enable_hwc_vds=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.hw=0 \
-    persist.demo.hdmirotationlock=false \
     persist.sys.sf.color_saturation=1.0 \
     ro.opengles.version=196610 \
     sdm.drop_skewed_vsync=1
@@ -132,14 +122,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.video=true \
     media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-
-# Memory optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true
-
-# Netflix custom property
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.netflix.bsp_rev=Q670-14477-1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -162,7 +144,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    DEVICE_PROVISIONED=1 \
     persist.radio.multisim.config=dsds \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.atfwd.start=true \
@@ -170,15 +151,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.lte_vrte_ltd=1 \
     persist.vendor.radio.sib16_support=1 \
-    persist.vendor.radio.poweron_opt=1 \
     persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.relay_oprt_change=1 \
-    ril.subscription.types=NV,RUIM \
     rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
-    ro.telephony.default_network=22,18 \
+    ro.telephony.default_network=22,22 \
     telephony.lteOnCdmaDevice=1
-
-# SSR
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.ssr.enable_ramdumps=0 \
-    persist.vendor.ssr.restart_level=ALL_ENABLE
