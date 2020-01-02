@@ -33,3 +33,6 @@
 
 # RTC
 /sys/class/rtc/rtc0/hctosys                                                                             u:object_r:sysfs_rtc:s0
+
+# Sensors
+/vendor/bin/hw/android\.hardware\.sensors@1\.0-service\.RMX1851                                         u:object_r:hal_sensors_default_exec:s0

@@ -1,8 +1,8 @@
 cc_binary {
-    name: "android.hardware.sensors@1.0-service",
+    name: "android.hardware.sensors@1.0-service.RMX1851",
     relative_install_path: "hw",
     vendor: true,
-    init_rc: ["android.hardware.sensors@1.0-service.rc"],
+    init_rc: ["android.hardware.sensors@1.0-service.RMX1851.rc"],
     defaults: ["hidl_defaults"],
     srcs: ["service.cpp"],
 
