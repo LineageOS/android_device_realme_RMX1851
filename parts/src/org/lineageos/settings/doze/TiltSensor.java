@@ -29,10 +29,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class PickupSensor implements SensorEventListener {
+public class TiltSensor implements SensorEventListener {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "PickupSensor";
+    private static final String TAG = "TiltSensor";
 
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
 
@@ -43,10 +43,10 @@ public class PickupSensor implements SensorEventListener {
 
     private long mEntryTimestamp;
 
-    public PickupSensor(Context context) {
+    public TiltSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = DozeUtils.getSensor(mSensorManager, "xiaomi.sensor.pickup");
+        mSensor = DozeUtils.getSensor(mSensorManager, "android.sensor.tilt_detector");
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
@@ -65,7 +65,7 @@ public class PickupSensor implements SensorEventListener {
 
         mEntryTimestamp = SystemClock.elapsedRealtime();
 
-        if (event.values[0] == 1) {
+        if (event.values[0] == 0) {
             DozeUtils.launchDozePulse(mContext);
         }
     }
