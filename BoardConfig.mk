@@ -175,7 +175,6 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # Treble
-BOARD_VNDK_VERSION := current
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Verified Boot
