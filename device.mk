@@ -229,6 +229,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.RMX1851
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm
+
 # IPA
 PRODUCT_PACKAGES += \
     libnetfilter_conntrack \
