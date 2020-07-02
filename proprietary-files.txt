@@ -253,9 +253,6 @@ vendor/lib/libffv.so
 vendor/lib/libiu456_datapath_filt_lib.so
 vendor/lib/libiu456_datapath_processor.so
 vendor/lib/libmdsprpc.so
-vendor/lib/libmegface.so
-vendor/lib/libmegface_meglive.so
-vendor/lib/libMegviiHum.so
 vendor/lib/libml_util.so
 vendor/lib/libmmcamera_faceproc.so
 vendor/lib/libmmcamera_faceproc2.so
